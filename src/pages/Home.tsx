@@ -1,12 +1,10 @@
 import Booklist from "../components/Booklists";
 import HomeContent from "../components/HomeContent";
-import Navbar from "./Navbar";
 
 const Home = () => {
     
     return ( 
-        <div>
-            <Navbar />
+        <div>          
             <HomeContent />
             <Booklist />
         </div>

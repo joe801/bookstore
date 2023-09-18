@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../apps/hooks";
+import Books from "./Books";
 
 const Booklist = () => {
     const books = useAppSelector((state) => state.book.books)
@@ -6,13 +8,18 @@ const Booklist = () => {
         <div>
             <h2 className=" text-orange-500">List of Books</h2>
             {books.map((book) => (
-                <div key={book.id}>
-                    <h3>{book.title}</h3>
-                    <h4>{book.author}</h4>
-                    <p>{book.genre}</p>
-                    <p>{book.summary}</p>
-                    <p>{book.yearWritten}</p>
-                </div>
+                <Link to={`/${book.id}`}>
+                    <Books 
+                        title={book.title} 
+                        key={book.id} 
+                        author={book.author} 
+                        genre={book.genre} 
+                        id={book.id} 
+                        yearWritten={book.yearWritten} 
+                        summary={book.summary}
+                        hardCopy={book.hardCopy}
+                    />
+                </Link>
             ))}
         </div>
      );
