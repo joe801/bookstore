@@ -1,0 +1,10 @@
+span{
+    transition: 0.5s;
+}
+
+input:focus ~ span, input.not-empty ~ span{
+    color: #38bdf8;
+    transform: translateY(-20px);
+    padding: 0 10px;
+    font-size: smaller;
+}

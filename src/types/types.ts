@@ -1,3 +1,5 @@
+import { SetStateAction } from 'react';
+
 export type bookDetails = {
     id: number,
     title: string,
@@ -9,3 +11,11 @@ export type bookDetails = {
 }
 
 export type bookState =  bookDetails[];
+
+export type inputProp = {
+    id: string,
+    type: string,
+    span: string,
+    value: string,
+    setValue: React.Dispatch<React.SetStateAction<string>>;
+}

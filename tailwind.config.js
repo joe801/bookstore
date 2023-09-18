@@ -7,9 +7,11 @@ export default {
         roboto: 'Roboto',
         bebas: 'Bebas Neue',
         lobster: 'Lobster',
+        mooli: 'Mooli',
       },
       colors: {
         textHover: '#309ccf',
+        primary: '#0b1222',
       }
     },
   },
