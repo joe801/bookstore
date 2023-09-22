@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { bookState } from "../types/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { bookDetails, bookState } from "../types/types";
 import { initialBooks } from "../utilities";
 
 type initialBookState = {
@@ -13,7 +13,12 @@ const initialState: initialBookState = {
 const bookSlice = createSlice({
     name: 'book',
     initialState,
-    reducers: {}
+    reducers: {
+        add_book: (state, action: PayloadAction<bookDetails>) => {
+            state.books.push(action.payload);
+        }
+    }
 })
 
+export const { add_book } = bookSlice.actions;
 export default bookSlice.reducer;

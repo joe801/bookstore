@@ -7,13 +7,12 @@ export type bookDetails = {
     genre: string,
     yearWritten: string,
     summary: string,
-    hardCopy: boolean,
 }
 
 export type bookState =  bookDetails[];
 
 export type inputProp = {
-    id: string,
+    id?: string,
     type: string,
     span: string,
     value: string,

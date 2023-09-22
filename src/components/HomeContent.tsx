@@ -25,7 +25,7 @@ const HomeContent = () => {
                 </h1>
                 <h3 className='font-roboto font-extrabold text-center text-[#94a3b8] text-lg lg:text-xl my-6'>
                     You get detailed summary of the books, and you're also able to
-                    add books you've want to recommend for others
+                    add books you want to recommend to others
                 </h3>
             </div>
             <Swiper
