@@ -13,7 +13,7 @@ const Input = (props: inputProp) => {
         <div className=" relative my-2">
             <input  
                 ref={inputRef}
-                required={false}
+                required={props.required || false}
                 className={`${props.value.trim() ? 'not-empty' : ''} border-2 border-[#1e293b] 
                 bg-transparent focus:border-[#38bdf8] outline-none text-white p-2 font-semibold 
                 font-mooli tracking-wide w-full`}

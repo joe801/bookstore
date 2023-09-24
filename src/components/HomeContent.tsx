@@ -38,7 +38,7 @@ const HomeContent = () => {
                 shadowScale: 0.94,
                 }}
                 modules={[EffectCube, Pagination, Autoplay]}
-                autoplay={{ delay: 3500, disableOnInteraction: false, }}
+                autoplay={{ delay: 3000, disableOnInteraction: false, }}
                 speed={3000}
                 loop={true}
                 pagination={false}

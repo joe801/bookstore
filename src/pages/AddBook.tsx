@@ -4,9 +4,14 @@ import Button from "../components/Button";
 import { add_book } from "../slices/bookSlice";
 import { useAppDispatch } from "../apps/hooks";
 import Booklist from "../components/Booklists";
+import BookAdded from "../modals/BookAdded";
 
 const AddBook = () => {
     const dispatch = useAppDispatch();
+    const [showModal, setShowModal] = useState(false);
+    const autoClose = () => {
+        setShowModal(false);
+    }
 
     const [title, setTitle] = useState<string>("");
     const [author, setAuthor] = useState<string>("");
@@ -29,7 +34,8 @@ const AddBook = () => {
             yearWritten: year,
             summary: summary
         }
-        dispatch(add_book(book))
+        dispatch(add_book(book));
+        setShowModal(true);
     }
     return ( 
         <div className="w-10/12 mx-auto flex flex-col items-center py-8">
@@ -37,7 +43,7 @@ const AddBook = () => {
                 Add a Book
             </h2>
             <form className=" space-y-8 flex flex-col" onSubmit={handleSubmit}>
-                <Input type="text" span="Book Title" value={title} setValue={setTitle} id={"1"}/>
+                <Input type="text" span="Book Title" value={title} setValue={setTitle} id={"1"} required={true}/>
                 <Input type="text" span="Book Author" value={author} setValue={setAuthor} id={"2"}/>
                 <Input type="text" span="Book Genre" value={genre} setValue={setGenre} id={"3"}/>
                 <Input type="text" span="Book Year" value={year} setValue={setYear} id={"4"}/>
@@ -51,9 +57,10 @@ const AddBook = () => {
                 >
                 </textarea>
                 <div className="flex justify-end w-20 self-end">
-                    <Button text={"Add"} />
+                    <Button text={"Add"} icon={false}/>
                 </div>
             </form>
+            {showModal && <BookAdded modal={showModal} setModal={setShowModal} autoClose={autoClose}/>}
             <Booklist />
         </div>
      );

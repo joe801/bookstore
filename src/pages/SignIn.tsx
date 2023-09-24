@@ -24,7 +24,7 @@ const SignIn = () => {
                     <Input type="text" span="User Name" value={userName} setValue={setUserName}/>
                     <Input type="password" span="Password" value={password} setValue={setPassword}/>
                     <div className="w-full md:w-4/5">
-                        <Button text={"Sign In"} />
+                        <Button text="Sign In" icon={true}/>
                     </div>
                 </form>
             </div>

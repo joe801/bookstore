@@ -1,4 +1,4 @@
-import { SetStateAction } from 'react';
+// import { SetStateAction } from 'react';
 
 export type bookDetails = {
     id: number,
@@ -13,6 +13,7 @@ export type bookState =  bookDetails[];
 
 export type inputProp = {
     id?: string,
+    required?: boolean,
     type: string,
     span: string,
     value: string,
